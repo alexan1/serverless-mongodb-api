@@ -26,7 +26,8 @@ namespace MongoMusic.API.Helpers
 
             builder.Services.AddSingleton((s) =>
             {
-                MongoClient client = new MongoClient(config[Settings.MONGO_CONNECTION_STRING]);
+                //MongoClient client = new MongoClient(config[Settings.MONGO_CONNECTION_STRING]);
+                MongoClient client = new MongoClient(Environment.GetEnvironmentVariable("MongoDBAtlasConnectionString"));
 
                 return client;
             });
