@@ -9,7 +9,7 @@ namespace MongoMusic.API.Helpers
     {
         //private string connectionString = Environment.GetEnvironmentVariable("MongoDBAtlasConnectionString");
         //public const string MONGO_CONNECTION_STRING = "MongoDBAtlasConnectionString";
-        public const string DATABASE_NAME = "People";
-        public const string COLLECTION_NAME = "rating";
+        public const string DATABASE_NAME = "Album";
+        public const string COLLECTION_NAME = "Album";
     }
 }

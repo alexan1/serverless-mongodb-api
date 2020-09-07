@@ -31,8 +31,8 @@ namespace MongoMusic.API.Functions
             _logger = logger;
             _config = config;
 
-            var database = _mongoClient.GetDatabase(_config[Settings.DATABASE_NAME]);
-            _albums = database.GetCollection<Album>(_config[Settings.COLLECTION_NAME]);
+            var database = _mongoClient.GetDatabase(Settings.DATABASE_NAME);
+            _albums = database.GetCollection<Album>(Settings.COLLECTION_NAME);
         }
 
         [FunctionName(nameof(DeleteAlbum))]
