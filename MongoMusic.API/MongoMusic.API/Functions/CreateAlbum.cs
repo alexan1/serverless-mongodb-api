@@ -1,16 +1,9 @@
+using MongoDB.Driver;
+using MongoMusic.API.Helpers;
+using MongoMusic.API.Models;
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using MongoDB.Driver;
-using Microsoft.Extensions.Configuration;
-using MongoMusic.API.Models;
-using MongoMusic.API.Helpers;
 
 namespace MongoMusic.API.Functions
 {
