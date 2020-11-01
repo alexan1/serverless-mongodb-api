@@ -1,3 +1,11 @@
+using DnsClient.Internal;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using MongoDB.Bson.IO;
 using MongoDB.Driver;
 using MongoMusic.API.Helpers;
 using MongoMusic.API.Models;
@@ -10,7 +18,7 @@ namespace MongoMusic.API.Functions
     public class CreateAlbum
     {
         private readonly MongoClient _mongoClient;
-        private readonly ILogger _logger;
+        private readonly DnsClient.Internal.ILogger _logger;
         private readonly IConfiguration _config;
 
         private readonly IMongoCollection<Album> _albums;
@@ -21,7 +29,7 @@ namespace MongoMusic.API.Functions
             IConfiguration config)
         {
             _mongoClient = mongoClient;
-            _logger = logger;
+            _logger = (DnsClient.Internal.ILogger)logger;
             _config = config;
 
             var database = _mongoClient.GetDatabase(Settings.DATABASE_NAME);
